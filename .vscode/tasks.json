@@ -1,0 +1,40 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Compile current file",
+			"type": "shell",
+			"command": "g++",
+			"args": [
+				"${file}",
+				"-I..",
+				"-o",
+				"\"${fileBasenameNoExtension}\"",
+				"-Wall",
+				"-O3"
+			],
+			"options": {
+				"cwd": "bin"
+			},
+			"problemMatcher": "$gcc",
+			"group": {
+				"kind": "build"
+			}
+		},
+		{
+			"label": "Build and run current file",
+			"type": "shell",
+			"command": "./${fileBasenameNoExtension}.exe",
+			"dependsOn": [
+				"Compile current file"
+			],
+			"options": {
+				"cwd": "bin"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			}
+		}
+	]
+}
