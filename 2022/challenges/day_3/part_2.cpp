@@ -1,4 +1,3 @@
-#include <map>
 #include "util.h"
 
 inline int charToInt(char character) {
